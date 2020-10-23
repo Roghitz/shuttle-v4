@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Advanced Drop-down Menu</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="drop-btn">
+      Menu<span class="fas fa-caret-down"></span>
+    </div>
+    <div class="tooltip">
+    </div>
+    <div class="wrapper">
+      <ul class="menu-bar">
+
+        <li class="monday"><a href="#">
+            Monday<i class="fas fa-angle-right"></i>
+          </a></li>
+
+        <li class="tuesday"><a href="#">
+            Tuesday <i class="fas fa-angle-right"></i>
+          </a></li>
+
+        <li class="wednesday"><a href="#">
+            Wednesday <i class="fas fa-angle-right"></i>
+          </a></li>
+
+        <li class="thursday"><a href="#">
+            Thursday<i class="fas fa-angle-right"></i>
+          </a></li>
+
+        <li class="friday"><a href="#">
+            Friday<i class="fas fa-angle-right"></i>
+          </a></li>
+
+        <li class="saturday"><a href="#">
+            Saturday<i class="fas fa-angle-right"></i>
+          </a></li>
+
+        <li class="sunday"><a href="#">
+            Sunday<i class="fas fa-angle-right"></i>
+          </a></li>
+
+      </ul>
+
+
+
+      <!-- Monday -->
+      <ul class="monday">
+        <li><span class="fas fa-arrow-left"></span>Monday</li>
+        <li><a href="#">
+            <div class="icon">
+            </div>
+            5am-6am-7am
+          </a></li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5pm-6pm-7pm
+          </a></li>
+      </ul>
+      <!-- Tuesday -->
+      <ul class="tuesday">
+        <li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>Tuesday</li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5am-6am-7am
+          </a></li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5pm-6pm-7pm
+          </a></li>
+      </ul>
+      <!-- Wednesday -->
+      <ul class="wednesday">
+        <li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>Wednesday</li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5am-6am-7am
+          </a></li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5pm-6pm-7pm
+          </a></li>
+      </ul>
+
+      <!-- Thursday -->
+      <ul class="thursday">
+        <li><span class="fas fa-arrow-left"></span>Thursday</li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5am-6am-7am
+          </a></li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5pm-6pm-7pm
+          </a></li>
+      </ul>
+
+      <!-- Friday -->
+      <ul class="friday">
+        <li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>Friday</li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5am-6am-7am
+          </a></li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5pm-6pm-7pm
+          </a></li>
+      </ul>
+
+      <!-- Saturday -->
+      <ul class="saturday">
+        <li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>Saturday</li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5am-6am-7am
+          </a></li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5pm-6pm-7pm
+          </a></li>
+      </ul>
+
+      <!-- Sunday -->
+      <ul class="saturday">
+        <li class="arrow back-setting-btn"><span class="fas fa-arrow-left"></span>Sunday</li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5am-6am-7am
+          </a></li>
+        <li><a href="#">
+            <div class="icon">
+              <span class="fas fa-time"></span></div>
+            5pm-6pm-7pm
+          </a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <script>
+    const drop_btn = document.querySelector(".drop-btn span");
+    const tooltip = document.querySelector(".tooltip");
+    const menu_wrapper = document.querySelector(".wrapper");
+    const menu_bar = document.querySelector(".menu-bar");
+    const tuesday = document.querySelector(".tuesday");
+    const monday = document.querySelector(".monday");
+    const setting_item = document.querySelector(".setting-item");
+    const help_item = document.querySelector(".help-item");
+    const setting_btn = document.querySelector(".back-setting-btn");
+    const help_btn = document.querySelector(".back-help-btn");
+    drop_btn.onclick = (() => {
+      menu_wrapper.classList.toggle("show");
+      tooltip.classList.toggle("show");
+    });
+    setting_item.onclick = (() => {
+      menu_bar.style.marginLeft = "-400px";
+      setTimeout(() => {
+        tuesday.style.display = "block";
+      }, 100);
+    });
+    help_item.onclick = (() => {
+      menu_bar.style.marginLeft = "-400px";
+      setTimeout(() => {
+        monday.style.display = "block";
+      }, 100);
+    });
+    setting_btn.onclick = (() => {
+      menu_bar.style.marginLeft = "0px";
+      tuesday.style.display = "none";
+    });
+    help_btn.onclick = (() => {
+      monday.style.display = "none";
+      menu_bar.style.marginLeft = "0px";
+    });
+  </script>
+
+</body>
+
+</html>
